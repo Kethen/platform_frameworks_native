@@ -746,6 +746,11 @@ void SurfaceFlinger::init() {
         ALOGE("Run StartPropertySetThread failed!");
     }
 
+	// disable hwc by default
+	mDebugDisableHWC = true;
+	invalidateHwcGeometry();
+	repaintEverything();
+
     ALOGV("Done initializing");
 }
 
